@@ -17,11 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::post('/v2/bot/user/{userId}/linkToken', [\App\Http\Controllers\Wrapper::class, 'link'])->name('link');
-Route::get('/v2/bot/profile/{userId}', [\App\Http\Controllers\Wrapper::class, 'profile'])->name('profile');
-Route::get('/v2/bot/followers/ids', [\App\Http\Controllers\Wrapper::class, 'getlist'])->name('getlist');
-Route::get('/v2/bot/richmenu/list', [\App\Http\Controllers\Wrapper::class, 'richmenu'])->name('richmenu');
-Route::post('/v2/bot/message/push', [\App\Http\Controllers\Wrapper::class, 'push'])->name('push');
+Route::post('/v2/bot/user/{userId}/linkToken', [\App\Http\Controllers\Wrapper::class, 'link'])->name('link');-> middleware('npm');
+Route::get('/v2/bot/profile/{userId}', [\App\Http\Controllers\Wrapper::class, 'profile'])->name('profile')-> middleware('npm');
+Route::get('/v2/bot/followers/ids', [\App\Http\Controllers\Wrapper::class, 'getlist'])->name('getlist')-> middleware('npm');
+Route::get('/v2/bot/richmenu/list', [\App\Http\Controllers\Wrapper::class, 'richmenu'])->name('richmenu')-> middleware('npm');
+Route::post('/v2/bot/message/push', [\App\Http\Controllers\Wrapper::class, 'push'])->name('push')-> middleware('npm');
 Route::get('/user/identitas', function (){
     return [
         'code' => '0',

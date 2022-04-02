@@ -13,7 +13,7 @@ class Wrapper extends Controller
             -> withbody(json_encode(value: [
     'to'=> 'U566af72f851bf1cd5d12f9b0f59600c3',
     'messages'=> ["type" => "text",
-            "text" => "Hello, world1"]
+                "text" => "Hello, world1"]
 ]), 'application/json') ->post('https://api.line.me/v2/bot/message/push')->json();
         return response()->json($json);
     }
